@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.iconfont,
+.icon-xiala- {
+  font-size: 10px;
+  margin-left: 6px;
+  margin-top: 2px;
+}
+
+
+.icon-gouwuche {
+  font-size: 13px;
+  margin-right: 3px;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.top-bg-box {
+  height: 45px;
+  background-color: #333333;
+}
+
+.container {
+  width: 1226px;
+  margin: 0 auto;
+}
+
+.nav-top-box {
+  position: relative;
+  min-width: 1226px;
+  background-color: #333333;
+}
+
+.left-box {
+  float: left;
+}
+
+.left-box>ul>li {
+  float: left;
+  list-style-type: none;
+  margin-left: 13px;
+  line-height: 45px;
+  vertical-align: middle;
+}
+
+.left-box>ul>li>a {
+  text-decoration: none;
+  font-size: 13px;
+  color: #B0B0B0;
+}
+
+.left-box>ul>li>a:hover {
+  color: white;
+}
+
+.right-box {
+  float: right;
+}
+
+.right-box>ul>li {
+  float: left;
+  list-style-type: none;
+  margin-right: 25px;
+  line-height: 45px;
+  vertical-align: middle;
+  padding: 0 5px;
+}
+
+.right-box>ul>li:nth-child(n+4):hover {
+  background-color: white;
+}
+
+.right-box>ul>li:nth-child(n+4):hover>a {
+  color: red;
+}
+
+.right-box>ul>li>a {
+  text-decoration: none;
+  font-size: 13px;
+  color: #B0B0B0;
+}
+
+.right-box>ul>li>a:hover {
+  color: white;
+}
+
+

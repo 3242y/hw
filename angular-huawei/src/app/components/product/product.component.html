@@ -1,0 +1,52 @@
+<div class="container clearfix">
+      <div class="menu-box">
+            <div class="banner-box">
+                  <div *ngFor="let i of bannerData" class="banner-item">
+                        <img src="{{i.picture}}" alt="">
+                        <div>{{i.name}}</div>
+                  </div>
+            </div>
+            <div class="menu-item">
+                  <img src="../../../assets/image/menu.png.webp" alt="">
+            </div>
+            <div>
+                  <div class="menu-title">电脑专区</div>
+                  <div class="menu-content">
+                        <div *ngFor="let i of computerData" (click)="hideParent(i.id)">
+                              <div class="img-box"><img src="{{i.picture}}" alt=""></div>
+                              <div class="name">{{i.name}}</div>
+                              <div class="model">{{i.model}}</div>
+                              <div class="price">
+                                    <div>￥{{i.now}}</div>
+                                    <div *ngIf="i.original!==0" class="now-price">￥{{i.original}}</div>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="menu-title">手机专区</div>
+                  <div class="menu-content">
+                        <div *ngFor="let i of phoneData" (click)="hideParent(i.id)" class="product-item">
+                              <div class="img-box"><img src="{{i.picture}}" alt=""></div>
+                              <div class="name">{{i.name}}</div>
+                              <div class="model">{{i.model}}</div>
+                              <div class="price">
+                                    <div>￥{{i.now}}</div>
+                                    <div *ngIf="i.original!==0" class="now-price">￥{{i.original}}</div>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="menu-title">平板专区</div>
+                  <div class="menu-content">
+                        <div *ngFor="let i of flatData" (click)="hideParent(i.id)">
+                              <div class="img-box"><img src="{{i.picture}}" alt=""></div>
+                              <div class="name">{{i.name}}</div>
+                              <div class="model">{{i.model}}</div>
+                              <div class="price">
+                                    <div>￥{{i.now}}</div>
+                                    <div *ngIf="i.original!==0" class="now-price">￥{{i.original}}</div>
+                              </div>
+                        </div>
+                  </div>
+
+            </div>
+      </div>
+</div>

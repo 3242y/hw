@@ -1,0 +1,542 @@
+.goods {
+  background-color: #F1F3F5;
+}
+
+
+
+.nav-box {
+  position: relative;
+  background-color: white;
+  height: 85px;
+  margin: 0 auto;
+}
+
+.nav-check-box {
+  position: absolute;
+  display: flex;
+  margin-left: 120px;
+  align-items: center;
+}
+
+.log-box {
+  width: 103px;
+  height: 74px;
+}
+
+.log-box>img {
+  width: 100%;
+}
+
+.myshopping {
+  margin-left: 150px;
+  font-size: 25px;
+}
+
+.nzsteap {
+  margin-left: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 1226px;
+  margin: 0px auto 20px;
+  padding-bottom: 10px;
+}
+
+.goods-box {
+  margin: 20px 0;
+  background-color: #F1F3F5;
+  padding: 10px 0;
+}
+
+.goods-address {
+  height: 180px;
+  padding-top: 10px;
+  background-color: white;
+}
+
+.goods-address-top {
+  display: flex;
+  padding-right: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goods-add-totle {
+  outline: 1px solid #F1F3F5;
+  padding: 2px 10px;
+  cursor: pointer;
+}
+
+.goods-address-title {
+  font-size: 17px;
+  margin: 20px;
+}
+
+.goods-address-top-add {
+  padding: 3px 10px;
+  outline: 1px solid #C4C4C4;
+  cursor: pointer;
+}
+
+.goods-add-address {
+  height: 70px;
+  width: 720px;
+  border: 1px solid #F1F3F5;
+  margin-left: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.goods-add-address>span {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.addressInfo {
+  height: 100%;
+  width: 100%;
+  outline: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.addressInfo-top {
+  display: flex;
+  align-items: center;
+}
+
+.addressInfo-top>div {
+  margin: 0 10px;
+}
+
+.addressInfo-top>div:last-child {
+  color: #CA141D;
+  box-shadow: 0 0 3px #CA141D;
+  font-size: 8px;
+}
+
+.addressInfo-bottom {
+  display: flex;
+  align-items: center;
+}
+
+.addressInfo-bottom>div {
+  margin: 0 10px;
+}
+
+.goods-address-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: black;
+  z-index: 9999;
+  background-color: rgba(15, 10, 10, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goods-address-list-box {
+  width: 600px;
+  height: 350px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.add-address {
+  position: relative;
+  font-size: 18px;
+  color: #5C5C5C;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.add-address-close {
+  position: absolute;
+  right: -10px;
+  top: -15px;
+  color: #C4C4C4;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cargo {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 15px;
+}
+
+.error {
+  color: red;
+  margin-top: -15px;
+  margin-left: 63px;
+}
+
+.cargo-left {
+  width: 70px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.cargo>input {
+  width: 100%;
+  outline: none;
+  border: 1px solid #C4C4C4;
+}
+
+.cargo-address-detail {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.area-check {
+  outline: 1px solid black;
+}
+
+.cargo-textarea {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.cargo-textarea>textarea {
+  width: 500px;
+  height: 60px;
+  outline: none;
+  border: 1px solid #C4C4C4;
+  overflow: auto;
+}
+
+.cargo-address-detail>button {
+  width: 120px;
+  height: 35px;
+}
+
+.cargo-address-detail>button:first-child {
+  border: 1px solid #C4C4C4;
+}
+
+.cargo-address-detail>button:last-child {
+  background-color: #CA141D;
+  color: white;
+  margin-left: 10px;
+}
+
+.goods-address-list-box>div {
+  width: 100%;
+  display: flex;
+}
+
+.goods-address-list-box>div {
+  width: 100%;
+}
+
+.cargo>.cargo-phone:last-child {
+  margin-left: 10px;
+}
+
+.cargo-phone {
+  width: 50%;
+  display: flex;
+}
+
+.cargo-phone>input {
+  flex: 1;
+  outline: none;
+  border: 1px solid #C4C4C4;
+}
+
+.cargo-phone>.cargo-left {
+  width: 63px;
+}
+
+.cargo-error {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.phone-error {
+  width: 50%;
+  padding-left: 63px;
+  margin-top: -15px;
+  color: red;
+}
+
+.goods-address-list {
+  padding: 20px;
+  background-color: white;
+  margin-top: 30px;
+}
+
+.goods-list-title {
+  display: flex;
+  outline: 1px solid #F1F3F5;
+}
+
+.left-list {
+  width: 800px;
+  outline: 1px solid #F1F3F5;
+}
+
+.left-list-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.left-list-top>div>img {
+  height: 70px;
+  width: 70px;
+}
+
+
+.left-list-bottom {
+  display: flex;
+  padding: 20px 0 50px;
+  border-top: 1px solid #F1F3F5;
+}
+
+.invoice-title {
+  font-size: 16px;
+  font-weight: 550;
+  margin-left: 20px;
+}
+
+.invoice-list {
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.invoice-info {
+  margin-left: 20px;
+}
+
+.invoice-info>div:first-child {
+  color: #5C5C5C;
+  font-size: 11px;
+}
+
+.invoice-list {
+  width: 170px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.invoice-list>div:first-child {
+  font-weight: 550;
+}
+
+.invoice-list a {
+  color: #5C5C5C;
+}
+
+.right-list {
+  background-color: #F6F6F6;
+  padding: 20px;
+  flex: 1;
+}
+
+.right-list-top {
+  border-bottom: 1px solid #C4C4C4;
+  padding: 0px 20px 52px;
+}
+
+.goods-company {
+  color: red;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.express-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.express-title>span {
+  color: red;
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+.right-list-bottom {
+  width: 200px;
+  margin: 50px 0 0 150px;
+}
+
+.goods-total {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.goods-total>div {
+  width: 80px;
+  text-align: end;
+  margin-top: 8px;
+}
+
+.totle-price {
+  font-size: 17px;
+  color: red;
+}
+
+.goods-coupon {
+  padding: 20px;
+  margin-top: 15px;
+  outline: 1px solid #F1F3F5;
+}
+
+.goods-coupon>div:first-child {
+  font-size: 16px;
+  font-weight: 550;
+}
+
+.coupon-list {
+  display: flex;
+  position: relative;
+  margin-top: 15px;
+}
+
+.coupon-list>div {
+  font-size: 12px;
+  margin-right: 40px;
+}
+
+.goods-exchange {
+  position: absolute;
+  right: -30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  outline: 1px solid #F1F3F5;
+  color: #5C5C5C;
+}
+
+.goods-exchange>input {
+  outline: none;
+  border: none;
+}
+
+.goods-exchange>div {
+  background-color: #EC9DAB;
+  color: white;
+  font-size: 9px;
+  padding: 2px 10px;
+  cursor: pointer;
+}
+
+.coupon-info {
+  margin-top: 15px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #5C5C5C;
+}
+
+.coupon-info>span {
+  font-size: 48px;
+}
+
+.goods-points {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  outline: 1px solid #F1F3F5;
+  margin-top: 15px;
+}
+
+.goods-points>div {
+  margin-left: 20px;
+}
+
+.goods-points>div>a {
+  text-decoration: none;
+  color: #5C5C5C;
+}
+
+.goods-submit {
+  padding: 20px;
+  height: 130px;
+  background-color: white;
+  margin-top: 10px;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.goods-submit-info {
+  position: absolute;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: 200px;
+}
+
+.goods-submit-totle-price {
+  margin: 15px 0;
+}
+
+.goods-submit-totle-price>span {
+  font-size: 18px;
+  color: red;
+  font-weight: bold;
+}
+
+.goods-submit-address {
+  padding: 8px 0;
+  width: 160px;
+  background-color: #FEF2F2;
+  outline: 1px solid #F2BCBC;
+  margin-bottom: 10px;
+  color: red;
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.goods-submit-address>a {
+  color: red;
+}
+
+.goods-submit-btn {
+  margin: 10px 0;
+}
+
+.goods-submit-btn>button {
+  border: none;
+  padding: 8px 30px;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}

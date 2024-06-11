@@ -1,0 +1,72 @@
+<app-top></app-top>
+<app-link></app-link>
+<div class="list-box">
+      <div class="container">
+            <div class="list-title">
+                  <a href="#" id="item-color">首页</a>>
+                  <a href="#">列表页</a>>
+                  <a href="#">Mate 系列</a>
+            </div>
+            <div class="list-menu">
+                  <div class="list-menu-item">
+                        <div id="item-color">分类：</div>
+                        <div>Mate系列</div>
+                  </div>
+                  <div class="list-menu-item">
+                        <div id="item-color">服务优惠：</div>
+                        <div>仅看有货</div>
+                  </div>
+                  <div class="list-menu-item">
+                        <div id="item-color">排序：</div>
+                        <div class="sort-box">
+                              <div tabindex="1">综合</div>
+                              <div tabindex="1">最新</div>
+                              <div tabindex="1" (click)="sortReview()">评论数</div>
+                              <div class="input-box">
+                                    <div>价格：</div>
+                                    <div class="price-box">
+                                          <div class="border-box">￥<input type="text" (input)="onInputChange($event)"
+                                                      [(ngModel)]="minPrice"></div>
+                                          <div class="middle-box"> — </div>
+                                          <div class="border-box">￥<input type="text" (input)="onInputChange($event)"
+                                                      [(ngModel)]="maxPrice"></div>
+                                    </div>
+
+                              </div>
+                        </div>
+                  </div>
+                  <div class="button-box">
+                        <button type="button" class="clear-button" (click)="clearPrice()">清空</button>
+                        <button type="button" class="confirm-button" (click)="sortListByPage()">确定</button>
+                  </div>
+            </div>
+            <div class="list-item-box">
+                  <div class="menu-content">
+                        <div *ngFor="let i of phoneData" class="list-item">
+                              <div class="img-box"><img src="{{i.picture}}" alt=""></div>
+                              <div class="name">{{i.name}}</div>
+                              <div class="model">{{i.model}}</div>
+                              <div class="price">
+                                    <div>￥{{i.now}}</div>
+                                    <div *ngIf="i.original!==0" class="now-price">￥{{i.original}}</div>
+                              </div>
+                              <div>
+                                    评论数：{{i.review}}
+                              </div>
+                        </div>
+                  </div>
+                  <div class="page-box">
+                        <div class="page-list">
+                              <div>首页</div>
+                              <div *ngFor="let i of  pageItems" (click)="pageChang(i)">
+                                    {{i}}
+                              </div>
+                              <div>尾页</div>
+                        </div>
+                  </div>
+            </div>
+
+      </div>
+</div>
+
+<app-bottom></app-bottom>

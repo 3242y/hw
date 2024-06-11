@@ -1,0 +1,9 @@
+<select [(ngModel)]="selectedProvince" (change)="onProvinceChange(selectedProvince)">
+      <option *ngFor="let province of provinces"  [value]="province.id">{{ province.area_name }}</option>
+</select>
+<select [(ngModel)]="selectedCity" (change)="onCityChange(selectedCity)">
+      <option *ngFor="let city of cities" [value]="city.id">{{ city.area_name }}</option>
+</select>
+<select [(ngModel)]="selectedArea" (change)="onAreaChange(selectedArea)">
+      <option *ngFor="let area of areas" [value]="area.id">{{ area.area_name }}</option>
+</select>

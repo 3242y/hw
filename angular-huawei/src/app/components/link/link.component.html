@@ -1,0 +1,25 @@
+<div class="nav-box">
+            <div #navBox class="nav-check-box">
+                  <div class="log-box">
+                        <img src="../../../assets/image/logo_app.png" alt="">
+                  </div>
+                  <div>
+                        <div class="menu-box">
+                              <ul>
+                                    <li><a href="#">华为</a></li>
+                                    <li><a href="#">鸿蒙智航</a></li>
+                                    <li><a href="#">华为首选</a></li>
+                                    <li><a href="#">生态周边</a></li>
+                              </ul>
+                        </div>
+                        <div class="search-box">
+                              <span class="iconfont icon-sousuo1" (click)="goSearch()"></span>
+                        </div>
+                  </div>
+            </div>
+      <div #bannerBox class="input-box clearfix">
+            <div class="input-search" (click)="searchBtn()"><span class="iconfont icon-sousuo1"></span></div>
+            <input type="text" placeholder="搜索商品" (keydown.enter)="onEnterPress($event)">
+            <div class="quxiao" (click)="move()">X</div>
+      </div>
+</div>

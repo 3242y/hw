@@ -1,0 +1,125 @@
+.nav-box {
+  position: relative;
+  width: 1226px;
+  height: 85px;
+  margin: 0 auto;
+}
+
+.nav-check-box {
+  display: flex;
+  align-items: center;
+}
+
+.log-box {
+  width: 103px;
+  height: 74px;
+}
+
+.log-box>img {
+  width: 100%;
+}
+
+.menu-box {
+  list-style-type: none;
+  margin-left: 160px;
+  margin-top: -45px;
+}
+
+.myshopping {
+  position: absolute;
+  margin-top: -35px;
+  margin-left: 150px;
+  font-size: 25px;
+}
+
+.menu-box>ul>li {
+  float: left;
+  margin-left: 20px;
+}
+
+.menu-box>ul>li>a {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+
+.menu-box>ul>li>a:hover {
+  color: red;
+}
+
+.search-box {
+  float: right;
+  height: 30px;
+  line-height: 30px;
+}
+
+.search-box>input {
+  width: 200px;
+  height: 100%;
+  border-radius: 10px;
+  outline: none;
+}
+
+.search-box>.icon-sousuo1 {
+  font-size: 22px;
+  color: #B0B0B0;
+}
+
+.search-box>.icon-sousuo1:hover {
+  color: red;
+}
+
+.input-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 570px;
+  height: 35px;
+  border-radius: 20px;
+  margin: auto;
+  background-color: #F2F2F2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-search {
+  float: left;
+  margin-left: 10px;
+  height: 35px;
+  line-height: 35px;
+}
+
+.input-search>.icon-sousuo1 {
+  font-size: 16px;
+  color: #8D8D8D;
+  cursor: pointer;
+}
+
+.input-box>input {
+  float: left;
+  height: 30px;
+  width: 480px;
+  padding-left: 20px;
+  background-color: #F2F2F2;
+  border: none;
+  outline: none;
+  margin-left: 15px;
+  margin-top: 3px;
+}
+
+.quxiao {
+  float: left;
+  height: 35px;
+  line-height: 35px;
+  font-size: 15px;
+  color: #8D8D8D;
+  cursor: pointer;
+}
+
+.quxiao:hover {
+  color: #181818;
+}

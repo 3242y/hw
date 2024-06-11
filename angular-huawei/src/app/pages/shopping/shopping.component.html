@@ -1,0 +1,111 @@
+<app-top></app-top>
+<app-link></app-link>
+<div class="list-box">
+      <div class="container">
+            <div class="list-title">
+                  <a href="#" id="item-color">首页</a>>
+                  <a href="#">电脑</a>>
+                  <a href="#">Mate 系列</a>>
+                  <a href="#">{{computerData.name}}</a>
+            </div>
+            <div class="shopping-box">
+                  <div class="img-box"><img src="{{computerData.picture}}" alt=""></div>
+                  <div class="model">
+                        <div class="model-model">{{computerData.model}}</div>
+                        <div class="model-time">
+                              <span
+                                    class="time-span">整点下单前10件赠价值199元华为三脚架自拍杆（智能控制版），限10点/16点/20点，活动时间5月10日10:00-5月20日23:59，查看活动详情>></span>
+                              超平整超可靠，全焦段XMAGE四摄，紫外防晒检测
+                        </div>
+                        <div class="model-price">
+                              ￥<span class="price-span">{{computerData.now}}</span>
+                        </div>
+                        <div class="model-huabei">
+                              花呗/掌上生活分期直购，最高可享<span class="time-span">12期</span>0分期利息
+                        </div>
+                        <div class="model-item">
+                              <div><a href="#">以旧换新</a></div>
+                              <div><a href="#">整点限量赠</a></div>
+                              <div><a href="#">赠送积分</a></div>
+                              <div><a href="#">0分期利息</a></div>
+                        </div>
+                        <div class="model-color">
+                              <div>颜色</div>
+                              <div class="model-sort">
+                                    <div
+                                          *ngFor="let style of styles"
+                                          [ngClass]="{'model-style': true, 'red': selectedStyle === style}"
+                                          (click)="setStyle(style)">
+                                          <div><img [src]="computerData.picture" alt=""></div>
+                                          <div>{{style}}</div>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="model-color">
+                              <div>版本</div>
+                              <div class="model-sort">
+                                    <div
+                                          *ngFor="let size of sizes"
+                                          [ngClass]="{'model-style': true, 'red': selectedSize === size}"
+                                          (click)="setSize(size)">
+                                          <div>{{size}}</div>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="model-color">
+                              <div>保障服务</div>
+                              <div class="model-sort">
+                                    <div
+                                          [ngClass]="{'model-service': true, 'red': selectedService}"
+                                          (click)="setService(selectedService)">
+                                          <div>延长服务宝1年￥468</div>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="model-color">
+                              <div>回收</div>
+                              <div class="model-recycle">
+                                    <div>高价回收</div>
+                                    <div>高价回收送多重购新补贴</div>
+                              </div>
+                              <div class="model-baoyou">
+                                    <div><span class="iconfont icon-gou"></span>满48包邮</div>
+                                    <div><span class="iconfont icon-gou"></span>由华为终端提供商品、发货开票及售后服务</div>
+                              </div>
+                        </div>
+                        <div class="model-shopping">
+                              <div class="model-price">
+                                    ￥<span class="price-span">{{computerData.now*count}}</span>
+                              </div>
+                              <div
+                                    class="model-checked">已选：{{selectedStyle}}-{{selectedSize}} x {{count}}</div>
+                              <div class="model-btn">
+                                    <div class="model-number">
+                                          <div class="reduce" (click)="reduce()">-</div>
+                                          <div>1</div>
+                                          <div class="add" (click)="add()">+</div>
+                                    </div>
+                                    <div class="model-btn-box">
+                                          <div class="add-btn"  (click)="addToCart()">加入购物车</div>
+                                          <div class="buy-btn" routerLink="/goods" (click)="buyshop()">立即购买</div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+      </div>
+      <div class="model-add-succsee" #addBtn>
+            <div>
+                  <div class="cancel-btn" (click)="cancleCart()">X</div>
+                  <span class="iconfont icon-gou"></span>
+                  <div>成功加入购物车</div>
+                  <div class="model-add-succsee-btn">
+                        <div class="model-btn-box" (click)="cancleCart()">再逛逛</div>
+                        <div class="model-btn-to" routerLink="/cart" (click)="cancleCart()">去结算</div>
+                  </div>
+            </div>
+      </div>
+</div>
+<app-bottom></app-bottom>
+<router-outlet></router-outlet>

@@ -1,0 +1,211 @@
+<app-top></app-top>
+<div class="goods">
+      <div class="nav-box">
+            <div class="nav-check-box">
+                  <div class="log-box">
+                        <img src="../../../assets/image/logo_app.png" alt="">
+                  </div>
+                  <div  class="myshopping">
+                        <div>我的订单</div>
+                  </div>
+                  <div class="nzsteap">
+                        <nz-steps [nzCurrent]="1" nzSize="small" nzLabelPlacement="vertical">
+                              <nz-step nzTitle="我的购物车" ></nz-step>
+                              <nz-step nzTitle="填写核对订单"></nz-step>
+                              <nz-step nzTitle="成功提交订单"></nz-step>
+                        </nz-steps>
+                  </div>
+            </div>
+      </div>
+      <div class="container">
+            <div class="goods-box">
+                  <div class="goods-address">
+                        <div class="goods-address-top">
+                              <div class="goods-address-title">收货地址</div>
+                              <div *ngIf="addBtn1" (click)="changeAddress()" class="goods-address-top-add">
+                                    <div><span>+</span>修改收货地址</div>
+                              </div>
+                        </div>
+                        <div class="goods-add-address">
+                              <div *ngIf="addBtn2" (click)="addAddress()"><span>+</span>新增收货地址</div>
+                              <div *ngIf="addBtn3" class="addressInfo">
+                                    <div class="addressInfo-top">
+                                          <div>{{addressName}}</div>
+                                          <div>{{addressPhone}}</div>
+                                          <div>默认地址</div>
+                                    </div>
+                                    <div class="addressInfo-bottom">
+                                          <div>{{addressData.province}}</div>
+                                          <div>{{addressData.city}}</div>
+                                          <div>{{addressData.area}}</div>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="goods-address-box" *ngIf="addBox">
+                              <div class="goods-address-list-box">
+                                    <div class="add-address">添加地址 <div class="add-address-close" (click)="closeAdd()">X
+                                          </div>
+                                    </div>
+
+                                    <form  >
+                                          <div class="cargo">
+                                                <label for="addressName" class="cargo-left">收货人：</label>
+                                                <input type="text" id="addressName" name="addressName"
+                                                      [(ngModel)]="addressName"
+                                                      pattern="[a-zA-Z\u4e00-\u9fff]+$"
+                                                      required
+                                                      [ngModelOptions]="{updateOn: 'blur'}"
+                                                      #addressNameControl="ngModel">
+                                          </div>
+                                          <div
+                                                *ngIf="addressNameControl.invalid && (addressNameControl.dirty || addressNameControl.touched)"
+                                                class="error">
+                                                <div *ngIf="addressNameControl.errors?.['required']">收货人姓名是必填项</div>
+                                                <div *ngIf="addressNameControl.errors?.['pattern']">收货人格式错误</div>
+                                          </div>
+
+                                          <div>
+                                                <div class="cargo">
+                                                      <div class="cargo-phone">
+                                                            <label for="addressPhone" class="cargo-left">手机号码：</label>
+                                                            <input type="text" name="addressPhone"
+                                                                  [(ngModel)]="addressPhone"
+                                                                  pattern="^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$"
+                                                                  required
+                                                                  [ngModelOptions]="{updateOn: 'blur'}"
+                                                                  #addressPhoneControl="ngModel">
+                                                      </div>
+                                                      <div class="cargo-phone">
+                                                            <label for="addressPhone1" class="cargo-left">备选号码：</label>
+                                                            <input type="text" name="addressPhone1"
+                                                                  [(ngModel)]="addressPhone1"
+                                                                  pattern="^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$"
+                                                                  required
+                                                                  [ngModelOptions]="{updateOn: 'blur'}"
+                                                                  #addressPhone1Control="ngModel">
+                                                      </div>
+                                                </div>
+                                                <div class="cargo-error">
+                                                      <div *ngIf="addressPhoneControl.invalid && (addressPhoneControl.dirty || addressPhoneControl.touched)"
+                                                            class="phone-error">
+                                                            <div *ngIf="addressPhoneControl.errors?.['pattern']">
+                                                                  手机号码格式错误</div>
+                                                            <div *ngIf="addressPhoneControl.errors?.['required']">
+                                                                  手机号码是必填项</div>
+                                                      </div>
+                                                      <div *ngIf="addressPhone1Control.invalid && (addressPhone1Control.dirty || addressPhone1Control.touched)"
+                                                            class="phone-error">
+                                                            <div *ngIf="addressPhone1Control.errors?.['pattern']">
+                                                                  备选手机号码格式错误</div>
+                                                      </div>
+                                                </div>
+                                          </div>
+
+                                          <div class="cargo">
+                                                <label class="cargo-left">收货地址：</label>
+                                                <app-area (dataChange)="handleDataChange($event)"></app-area>
+                                          </div>
+
+                                          <div class="cargo-textarea">
+                                                <textarea name="addressText" [(ngModel)]="addressText"
+                                                      required></textarea>
+                                          </div>
+
+                                          <div class="cargo-address-detail">
+                                                <button type="button" (click)="closeAdd()">取消</button>
+                                                <button type="submit" (click)="safeInfo()">保存并使用</button>
+                                          </div>
+                                    </form>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="goods-address-list">
+                        <div class="goods-list-title">
+                              <div class="left-list">
+                                    <div *ngFor="let i of data">
+                                          <div class="left-list-top">
+                                                <div><img src="{{i[0].picture}}" alt=""></div>
+                                                <div>{{i[0].name}}</div>
+                                                <div>X{{i[1]}}</div>
+                                                <div>￥{{i[0].now}}</div>
+                                          </div>
+                                          <div class="left-list-bottom">
+                                                <div class="invoice-title">发票信息</div>
+                                                <div class="invoice-info">
+                                                      <div>注：如果商品由第三方案卖家销售，则发票由第三方卖家开具</div>
+                                                      <div class="invoice-list">
+                                                            <div>电子普通发票</div>
+                                                            <div>个人</div>
+                                                            <div><a href="#">修改</a></div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                              <div class="right-list">
+                                    <div class="right-list-top">
+                                          <div>商品由<span class="goods-company">华为商城</span>选择合作快递</div>
+                                          <div class="express-title">
+                                                <span class="iconfont icon-a-mianfeibiaozhunpeisong19x15"></span>
+                                                <div>标准配送</div>
+                                          </div>
+                                    </div>
+                                    <div class="right-list-bottom">
+                                          <div class="goods-total">
+                                                <div>商品总金额：</div>
+                                                <div>￥99999</div>
+                                          </div>
+                                          <div class="goods-total">
+                                                <div>运费：</div>
+                                                <div>￥{{freight}}</div>
+                                          </div>
+                                          <div class="goods-total">
+                                                <div>优惠金额：</div>
+                                                <div>-￥{{discount}}</div>
+                                          </div>
+                                          <div class="goods-total">
+                                                <div>结算金额：</div>
+                                                <div class="totle-price">{{totlePrice}}</div>
+                                          </div>
+                                    </div>
+                              </div>
+
+                        </div>
+
+                        <div class="goods-coupon">
+                              <div>使用优惠劵</div>
+                              <div class="coupon-list">
+                                    <div>可用优惠卷0</div>
+                                    <div>不可用优惠卷0</div>
+                                    <div class="goods-exchange">
+                                          <input type="text" placeholder="请输入兑换码">
+                                          <div>兑换</div>
+                                    </div>
+                              </div>
+                              <div class="coupon-info">
+                                    <span class="iconfont icon--wodeyouhuiquan"></span>
+                                    <div>您没有优惠劵</div>
+                              </div>
+                        </div>
+                        <div class="goods-points">
+                              <div>优惠与抵用</div>
+                              <div>共0积分</div>
+                              <div><a href="#">积分规则</a></div>
+                        </div>
+                  </div>
+                  <div class="goods-submit">
+                        <div class="goods-submit-info">
+                              <div class="goods-submit-totle-price">总付金额：<span>￥{{totlePrice}}.00</span>
+                              </div>
+                              <div class="goods-submit-address"><span
+                                          class="iconfont icon-gantanhaozhong"></span>无收货地址不可下单，<a href="#">点击填充</a>
+                              </div>
+                              <div class="goods-submit-btn">
+                                    <button type="button" (click)="submitOrder()">提交订单</button>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>
+<app-bottom></app-bottom>

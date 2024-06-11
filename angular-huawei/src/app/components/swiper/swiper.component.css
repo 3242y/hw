@@ -1,0 +1,147 @@
+.swiper-container {
+  width: 100%;
+  height: 550px;
+  position: relative;
+}
+
+.content-bottom-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.img-box {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: fit-content;
+  left: 0;
+  top: 0;
+}
+
+.img-box>img {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  height: 550px;
+  object-fit: cover;
+}
+
+[type="radio"]:checked+img {
+  opacity: 1;
+}
+
+.link-box {
+  width: fit-content;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 9;
+}
+
+[type="radio"] {
+  display: none;
+}
+
+.link-box>label {
+  border-radius: 10px;
+  background-color: lightgray;
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  text-align: center;
+  margin-left: 15px;
+  cursor: pointer;
+
+}
+
+.link-box>label:hover {
+  background-color: white;
+}
+
+.left-check-box {
+  height: 470px;
+  position: absolute;
+  margin-top: 20px;
+  box-shadow: 0 0 15px gray;
+  left: 150px;
+  top: 0;
+  z-index: 8;
+}
+
+.left-check-nav-box {
+  background-color: white;
+  width: 200px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px 0;
+
+}
+
+.left-check-info-box {
+  list-style-type: none;
+
+}
+
+.left-check-info-box>li>a {
+  display: block;
+  text-decoration: none;
+  color: #999999;
+  font-size: 14px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0px 10px;
+  position: relative;
+}
+
+.left-check-info-box>li>a:hover {
+  color: black;
+}
+
+.left-check-nav-box>ul>li>a::after {
+  content: ">";
+  position: absolute;
+  right: 15px;
+}
+
+.category-detail {
+  background-color: white;
+  position: absolute;
+  width: 400px;
+  right: 0;
+  top: 0px;
+  bottom: 0;
+  left: 200px;
+  display: none;
+  padding-top: 20px;
+}
+
+.left-check-info-box>li:hover>.category-detail {
+  display: block;
+}
+
+.item-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.item-list {
+  color: #999999;
+  margin: 20px 40px;
+}
+
+.item-list>img {
+  float: left;
+  width: 40px;
+  height: 40px;
+}
+
+.item-list>div {
+  float: left;
+  height: 40px;
+  line-height: 40px;
+}

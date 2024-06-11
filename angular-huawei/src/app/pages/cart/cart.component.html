@@ -1,0 +1,123 @@
+<app-top></app-top>
+<div class="cart">
+      <div class="nav-box">
+            <div class="nav-check-box">
+                  <div class="log-box">
+                        <img src="../../../assets/image/logo_app.png" alt="">
+                  </div>
+                  <div class="myshopping">
+                        <div>我的购物车</div>
+                  </div>
+                  <div class="nzsteap">
+                        <nz-steps [nzCurrent]="0" nzSize="small" nzLabelPlacement="vertical">
+                              <nz-step nzTitle="我的购物车"></nz-step>
+                              <nz-step nzTitle="填写核对订单"></nz-step>
+                              <nz-step nzTitle="成功提交订单"></nz-step>
+                        </nz-steps>
+                  </div>
+            </div>
+      </div>
+      <div class="container">
+            <div class="cart-box">
+                  <div class="cart-title">
+                        <div class="cart-title-left">
+                              <div><label
+                                          nz-checkbox
+                                          [(ngModel)]="isAllCheck"
+                                          (ngModelChange)="allCheck()"
+                                          [nzIndeterminate]="indeterminate">
+                                          全选
+                                    </label></div>
+                              <div>商品</div>
+                        </div>
+                        <div class="cart-title-right">
+                              <div>单价</div>
+                              <div>数量</div>
+                              <div>小计</div>
+                              <div>操作</div>
+                        </div>
+                  </div>
+                  <div *ngFor="let i of data">
+                        <div class="cart-content">
+                              <div class="cart-content-title">
+                                    <div class="cart-title-left">
+                                          <div>
+                                                <label
+                                                      nz-checkbox
+                                                      [(ngModel)]="i[5]"
+                                                      (ngModelChange)="oneCheck(i[0].id)">
+                                                </label>
+                                          </div>
+                                          <div><img src="{{i[0].picture}}" alt=""></div>
+                                          <div class="cart-title-left-text">
+                                                <div>{{i[0].name}} </div>
+                                                <div>{{i[2]}} {{i[3]}}</div>
+                                                <div><span class="iconfont icon-gantanhaozhong"></span>此商品仅购1件 </div>
+                                          </div>
+                                    </div>
+                                    <div class="cart-title-right">
+                                          <div>￥{{i[4]}}.00</div>
+                                          <div class="cart-title-right-num">
+                                                <div (click)="reduce(i[0].id)">-</div>
+                                                <div>{{i[1]}}</div>
+                                                <div (click)="add(i[0].id)">+</div>
+                                          </div>
+                                          <div>￥{{i[0].now*i[1]}}.00</div>
+                                          <div (click)="Delshop(i[0].id)" class="delete">删除</div>
+                                    </div>
+                              </div>
+                              <div class="giveaway-box">
+                                    <div><img src="../../../assets/image/item1.webp" alt=""></div>
+                                    <div class="giveaway-box-text">
+                                          <div>赠品</div>
+                                          <div>华为经典手表（USB Type-C版）金色</div>
+                                    </div>
+                                    <div>X2</div>
+                              </div>
+                              <div class="coupon-box">
+                                    <div><input type="checkbox"></div>
+                                    <div class="coupon-box-text">
+                                          <div>优惠</div> HUAWEI Care+一年期 （碎屏服务 ￥201.00）
+                                    </div>
+                                    <div>（服务范围大于碎屏服务宝与延长服务宝，不能同时购买）</div>
+                                    <div><a href="#">了解详情</a></div>
+                              </div>
+                              <div class="coupon-box">
+                                    <div><input type="checkbox"></div>
+                                    <div class="coupon-box-text">
+                                          <div>优惠</div> 延长服务宝1年，￥112.00
+                                    </div>
+                                    <div><a href="#">了解详情</a></div>
+                              </div>
+                        </div>
+                  </div>
+
+                  <div class="settle-box">
+                        <div class="settle-left">
+                              <div>
+                                    <label
+                                          nz-checkbox
+                                          [(ngModel)]="isAllCheck"
+                                          (ngModelChange)="allCheck()"
+                                          [nzIndeterminate]="indeterminate">
+                                          全选
+                                    </label>
+                              </div>
+                              <div class="del-check" (click)="delCheck()">删除</div>
+                        </div>
+                        <div class="settle-right">
+                              <div class="settle-price">
+                                    <div class="totle-price">总计：
+                                          <span>￥{{totlePrice}}.00</span>
+                                          <span class="iconfont icon-wenhao"></span>
+                                    </div>
+                                    <div class="totle-price-text">已选择 <span>{{count}}</span> 件商品，优惠：<span>￥0.00</span>
+                                    </div>
+                              </div>
+                              <div class="settle-btn" (click)="goToOrder()">立即结算</div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>
+<app-bottom></app-bottom>

@@ -1,0 +1,78 @@
+<div class="swiper-container">
+      <div class="content-bottom-box  clearfix">
+            <div class="content-img-box">
+                  <div class="img-box">
+                        <input type="radio" name="link" checked id="link1" />
+                        <img src="../../../assets/image/hw4.webp">
+                        <input type="radio" name="link" id="link2" />
+                        <img src="../../../assets/image/hw2.webp">
+                        <input type="radio" name="link" id="link3" />
+                        <img src="../../../assets/image/hw3.webp">
+                        <input type="radio" name="link" id="link4" />
+                        <img src="../../../assets/image/hw1.webp">
+                        <input type="radio" name="link" id="link5" />
+                        <img src="../../../assets/image/hw5.webp">
+                        <input type="radio" name="link" id="link6" />
+                        <img src="../../../assets/image/hw6.webp">
+                        <input type="radio" name="link" id="link7" />
+                        <img src="../../../assets/image/hw7.webp">
+                  </div>
+                  <div class="link-box">
+                        <label for="link1"></label>
+                        <label for="link2"></label>
+                        <label for="link3"></label>
+                        <label for="link4"></label>
+                        <label for="link5"></label>
+                        <label for="link6"></label>
+                        <label for="link7"></label>
+                  </div>
+            </div>
+
+            <div class="left-check-box ">
+                  <div class="left-check-nav-box clearfix">
+                        <ul class="left-check-info-box">
+                              <li *ngFor="let i of listArry">
+                                    <a href="#" routerLink="/list">{{i}}</a>
+                                    <div class="category-detail">
+                                          <div class="item-box">
+                                                <div class="item-list" routerLink="/list"><img src="../../../assets/image/item.webp"
+                                                            alt="">
+                                                      <div>Mate系列</div>
+                                                </div>
+                                                <div class="item-list" routerLink="/list"><img src="../../../assets/image/item.webp"
+                                                            alt="">
+                                                      <div>华为官方翻新</div>
+                                                </div>
+                                                <div class="item-list" routerLink="/list"><img src="../../../assets/image/item1.webp"
+                                                            alt="">
+                                                      <div>Pura系列</div>
+                                                </div>
+                                                <div class="item-list" routerLink="/list"><img src="../../../assets/image/item.webp"
+                                                            alt="">
+                                                      <div>智选手机</div>
+                                                </div>
+                                                <div class="item-list" routerLink="/list"><img src="../../../assets/image/item.webp"
+                                                            alt="">
+                                                      <div>nova系列</div>
+                                                </div>
+                                                <div class="item-list" routerLink="/list"><img src="../../../assets/image/item1.webp"
+                                                            alt="">
+                                                      <div>配件周边</div>
+                                                </div>
+                                                <div class="item-list" routerLink="/list"><img src="../../../assets/image/item.webp"
+                                                            alt="">
+                                                      <div>Pocket系列</div>
+                                                </div>
+                                                <div class="item-list" routerLink="/list"><img src="../../../assets/image/item1.webp"
+                                                            alt="">
+                                                      <div>华为畅享系列</div>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </li>
+                        </ul>
+                  </div>
+            </div>
+
+      </div>
+</div>
